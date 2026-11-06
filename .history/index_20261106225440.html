@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MomCare Continuity Care - Pendampingan Kehamilan Terpercaya</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pinkSoft: '#FFF0F5',
+                        pinkMain: '#FFB6C1',
+                        pinkDeep: '#FF69B4',
+                        pinkDark: '#DB7093',
+                        roseSoft: '#FFE4E1',
+                        accentGold: '#F4C430'
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #FFF9FA; }
+        .gradient-pink { background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%); }
+        .gradient-soft { background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%); }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="text-gray-700 antialiased leading-relaxed">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-pink-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full gradient-pink flex items-center justify-center text-white shadow-md">
+                        <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-pinkDark block leading-tight">MomCare</span>
+                        <span class="text-xs text-pink-400 font-medium tracking-wide">Continuity Care</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-600">
+                    <a href="#home" class="hover:text-pinkDeep transition-colors">Beranda</a>
+                    <a href="#tentang" class="hover:text-pinkDeep transition-colors">Tentang Kami</a>
+                    <a href="#layanan" class="hover:text-pinkDeep transition-colors">Paket Layanan</a>
+                    <a href="#edukasi" class="hover:text-pinkDeep transition-colors">Edukasi Ibu</a>
+                    <a href="#testimoni" class="hover:text-pinkDeep transition-colors">Testimoni</a>
+                    <a href="#faq" class="hover:text-pinkDeep transition-colors">FAQ</a>
+                    <a href="#daftar" class="hover:text-pinkDeep transition-colors">Daftar</a>
+                </div>
+
+                <!-- Contact & Social CTA -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="https://instagram.com/auliaanrp" target="_blank" class="w-10 h-10 rounded-full bg-pink-100 text-pinkDark flex items-center justify-center hover:bg-pinkDeep hover:text-white transition-all">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <a href="https://wa.me/6281261538546?text=Halo%20Bidan%20Aulia,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20MomCare" target="_blank" class="gradient-pink text-white px-5 py-2.5 rounded-full font-medium text-sm shadow-md hover:shadow-lg transition-all flex items-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Hubungi Bidan</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-pinkDark focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-pink-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block py-2 text-gray-600 font-medium hover:text-pinkDeep">Beranda</a>
+            <a href="#tentang" class="block py-2 text-gray-600 font-medium hover:text-pinkDeep">Tentang Kami</a>
+            <a href="#layanan" class="block py-2 text-gray-600 font-medium hover:text-pinkDeep">Paket Layanan</a>
+            <a href="#edukasi" class="block py-2 text-gray-600 font-medium hover:text-pinkDeep">Edukasi Ibu</a>
+            <a href="#testimoni" class="block py-2 text-gray-600 font-medium hover:text-pinkDeep">Testimoni</a>
+            <a href="#faq" class="block py-2 text-gray-600 font-medium hover:text-pinkDeep">FAQ</a>
+            <a href="#daftar" class="block py-2 text-gray-600 font-medium hover:text-pinkDeep">Daftar</a>
+            <div class="pt-4 border-t border-pink-100 flex flex-col space-y-2">
+                <a href="https://instagram.com/auliaanrp" target="_blank" class="w-full text-center py-2 bg-pink-100 text-pinkDark rounded-xl font-medium flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Follow @auliaanrp</span>
+                </a>
+                <a href="https://wa.me/6281261538546?text=Halo%20Bidan%20Aulia,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20MomCare" target="_blank" class="w-full text-center py-2.5 gradient-pink text-white rounded-xl font-medium flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Chat WhatsApp (081261538546)</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="pt-32 pb-20 gradient-soft relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="inline-block bg-white text-pinkDark text-xs font-semibold px-4 py-1.5 rounded-full border border-pink-200 shadow-sm">
+                        🌸 Pendampingan Kehamilan Berkelanjutan
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                        Aman, Nyaman, dan Terpercaya Bersama <span class="text-pinkDark">MomCare</span>
+                    </h1>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        Layanan kebidanan berkelanjutan (Continuity of Care) yang menggabungkan pemeriksaan kesehatan, konseling, edukasi interaktif, dan komunikasi digital praktis untuk Bunda & buah hati.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="https://wa.me/6281261538546?text=Halo%20Bidan%20Aulia,%20saya%20ingin%20reservasi%20layanan%20MomCare" target="_blank" class="gradient-pink text-white px-8 py-3.5 rounded-full font-semibold shadow-lg hover:opacity-90 transition-all text-center flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Reservasi Jadwal</span>
+                        </a>
+                        <a href="#layanan" class="bg-white text-pinkDark border-2 border-pinkMain px-8 py-3.5 rounded-full font-semibold hover:bg-pink-50 transition-all text-center">
+                            Lihat Paket Layanan
+                        </a>
+                    </div>
+                    <div class="pt-6 flex items-center space-x-6 border-t border-pink-200/60">
+                        <div>
+                            <span class="block text-2xl font-bold text-pinkDark">100%</span>
+                            <span class="text-xs text-gray-500 font-medium">Bidan Competent</span>
+                        </div>
+                        <div class="h-8 w-px bg-pink-200"></div>
+                        <div>
+                            <span class="block text-2xl font-bold text-pinkDark">Personal</span>
+                            <span class="text-xs text-gray-500 font-medium">Woman-Centered Care</span>
+                        </div>
+                        <div class="h-8 w-px bg-pink-200"></div>
+                        <div>
+                            <span class="block text-2xl font-bold text-pinkDark">24/7</span>
+                            <span class="text-xs text-gray-500 font-medium">Dukungan Digital</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full gradient-pink opacity-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
+                    <div class="bg-white p-6 rounded-3xl shadow-xl border border-pink-100 max-w-sm w-full relative z-10 text-center space-y-4">
+                        <div class="w-24 h-24 mx-auto rounded-full gradient-pink p-1 shadow-md">
+                            <div class="w-full h-full bg-white rounded-full flex items-center justify-center text-pinkDark text-4xl font-bold">
+                                ANP
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Aulia Nur Pratidina</h3>
+                            <p class="text-xs text-pinkDark font-semibold">Bidan Penanggung Jawab & Pendamping</p>
+                            <p class="text-xs text-gray-400 mt-1">NIM / REG: P17324125037</p>
+                        </div>
+                        <div class="bg-pinkSoft p-3 rounded-2xl text-xs text-gray-600 space-y-1">
+                            <p class="font-medium text-pinkDark"><i class="fa-solid fa-location-dot"></i> Area Layanan Main: Kota Bandung</p>
+                            <p>Tatap Muka di PMB / Kunjungan Rumah (Home Visit)</p>
+                        </div>
+                        <a href="https://instagram.com/auliaanrp" target="_blank" class="block w-full py-2 bg-pink-50 hover:bg-pink-100 text-pinkDark text-xs font-semibold rounded-xl border border-pink-200 transition-colors">
+                            <i class="fa-brands fa-instagram mr-1"></i> @auliaanrp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI SECTION -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-pinkDark text-sm font-semibold tracking-wider uppercase">Mengapa MomCare?</span>
+                <h2 class="text-3xl font-bold text-gray-800">Konsep Pelayanan Kebidanan Berkelanjutan</h2>
+                <div class="w-16 h-1 gradient-pink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-pinkSoft/50 p-8 rounded-3xl border border-pink-100 hover:shadow-lg transition-all space-y-4">
+                    <div class="w-14 h-14 rounded-2xl gradient-pink text-white flex items-center justify-center text-2xl shadow-md">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Pendampingan Berkelanjutan</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Kami tidak hanya melayani saat kunjungan singkat, melainkan terus mendampingi Bunda dari Trimester I, II, III, persiapan melahirkan, hingga nifas dan menyusui.
+                    </p>
+                </div>
+
+                <div class="bg-pinkSoft/50 p-8 rounded-3xl border border-pink-100 hover:shadow-lg transition-all space-y-4">
+                    <div class="w-14 h-14 rounded-2xl gradient-pink text-white flex items-center justify-center text-2xl shadow-md">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Akses Digital & Pengingat</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Memudahkan jadwal konsultasi, pemantauan kondisi harian, pengingat otomatis jadwal vitamin/pemeriksaan, serta konsultasi cepat via WhatsApp.
+                    </p>
+                </div>
+
+                <div class="bg-pinkSoft/50 p-8 rounded-3xl border border-pink-100 hover:shadow-lg transition-all space-y-4">
+                    <div class="w-14 h-14 rounded-2xl gradient-pink text-white flex items-center justify-center text-2xl shadow-md">
+                        <i class="fa-solid fa-user-nurse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Sesuai Kompetensi Bidan</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Seluruh tindakan kebidanan, konseling psikologis, serta edukasi dijalankan secara aman, profesional, ramah, dan berorientasi penuh pada kenyamanan ibu.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAKET LAYANAN SECTION -->
+    <section id="layanan" class="py-20 gradient-soft">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-pinkDark text-sm font-semibold tracking-wider uppercase">Pilihan Terbaik Bunda</span>
+                <h2 class="text-3xl font-bold text-gray-800">Paket Pendampingan & Harga</h2>
+                <p class="text-gray-600 text-sm">Pilih paket pendampingan kehamilan yang paling sesuai dengan kebutuhan Bunda dan keluarga.</p>
+                <div class="w-16 h-1 gradient-pink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                <!-- Paket Basic -->
+                <div class="bg-white p-8 rounded-3xl border border-pink-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <span class="bg-pink-100 text-pinkDark text-xs font-bold px-3 py-1 rounded-full inline-block">Basic</span>
+                        <h3 class="text-2xl font-bold text-gray-800">Paket Pendampingan Trimester</h3>
+                        <p class="text-xs text-gray-500">Cocok untuk pemeriksaan dan edukasi rutin per trimester.</p>
+                        <div class="pt-4 border-t border-pink-100">
+                            <span class="text-3xl font-bold text-pinkDark">Konsultasi Rutin</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-600 pt-4">
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkMain"></i>
+                                <span>Pemeriksaan fisik & tanda vital</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkMain"></i>
+                                <span>Konseling nutrisi & perkembangan janin</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkMain"></i>
+                                <span>Pengingat jadwal via WhatsApp</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281261538546?text=Halo%20Bidan%20Aulia,%20saya%20tertarik%20dengan%20Paket%20Basic" target="_blank" class="mt-8 w-full py-3 border-2 border-pinkMain text-pinkDark rounded-2xl font-semibold hover:bg-pink-50 transition-all text-center block">
+                        Pilih Paket Basic
+                    </a>
+                </div>
+
+                <!-- Paket Standard (Recommended) -->
+                <div class="bg-white p-8 rounded-3xl border-2 border-pinkDeep shadow-xl transition-all flex flex-col justify-between relative transform md:-translate-y-2">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-pink text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
+                        PALING POPULER
+                    </div>
+                    <div class="space-y-4 pt-2">
+                        <span class="bg-pink-100 text-pinkDark text-xs font-bold px-3 py-1 rounded-full inline-block">Standard</span>
+                        <h3 class="text-2xl font-bold text-gray-800">Continuity Care Full</h3>
+                        <p class="text-xs text-gray-500">Pendampingan komprehensif Trimester I s/d Persiapan Melahirkan.</p>
+                        <div class="pt-4 border-t border-pink-100">
+                            <span class="text-3xl font-bold text-pinkDark">Paket Lengkap</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-600 pt-4">
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkDeep"></i>
+                                <span>Semua fasilitas Paket Basic</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkDeep"></i>
+                                <span>Pemantauan kondisi kesehatan berkala</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkDeep"></i>
+                                <span>Edukasi persiapan persalinan & mental</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkDeep"></i>
+                                <span>Layanan kunjungan rumah (Home Visit)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281261538546?text=Halo%20Bidan%20Aulia,%20saya%20tertarik%20dengan%20Paket%20Standard" target="_blank" class="mt-8 w-full py-3.5 gradient-pink text-white rounded-2xl font-semibold shadow-md hover:opacity-90 transition-all text-center block">
+                        Pilih Paket Standard
+                    </a>
+                </div>
+
+                <!-- Paket Premium -->
+                <div class="bg-white p-8 rounded-3xl border border-pink-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <span class="bg-pink-100 text-pinkDark text-xs font-bold px-3 py-1 rounded-full inline-block">Premium</span>
+                        <h3 class="text-2xl font-bold text-gray-800">Mom & Baby Exclusive</h3>
+                        <p class="text-xs text-gray-500">Pendampingan ekstra hingga masa nifas & perawatan bayi baru lahir.</p>
+                        <div class="pt-4 border-t border-pink-100">
+                            <span class="text-3xl font-bold text-pinkDark">VIP Care</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-600 pt-4">
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkMain"></i>
+                                <span>Semua fasilitas Paket Standard</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkMain"></i>
+                                <span>Pendampingan Nifas & Konseling Menyusui</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkMain"></i>
+                                <span>Edukasi & Pendampingan Care Bayi Baru Lahir</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fa-solid fa-circle-check text-pinkMain"></i>
+                                <span>Prioritas Layanan Tanya-Jawab 24/7</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281261538546?text=Halo%20Bidan%20Aulia,%20saya%20tertarik%20dengan%20Paket%20Premium" target="_blank" class="mt-8 w-full py-3 border-2 border-pinkMain text-pinkDark rounded-2xl font-semibold hover:bg-pink-50 transition-all text-center block">
+                        Pilih Paket Premium
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUKASI SECTION -->
+    <section id="edukasi" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-pinkDark text-sm font-semibold tracking-wider uppercase">Pusat Informasi</span>
+                <h2 class="text-3xl font-bold text-gray-800">Edukasi Kesehatan Ibu & Anak</h2>
+                <p class="text-gray-600 text-sm">Informasi praktis dan terpercaya seputar masa kehamilan hingga menyusui.</p>
+                <div class="w-16 h-1 gradient-pink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-pinkSoft/30 rounded-3xl overflow-hidden border border-pink-100 hover:shadow-md transition-all">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80" 
+                             alt="Nutrisi Kehamilan" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pinkDark/80 to-transparent flex items-end justify-center pb-4">
+                            <i class="fa-solid fa-apple-whole text-white text-4xl drop-shadow-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs font-bold text-pinkDark uppercase tracking-wide">Trimester I - III</span>
+                        <h3 class="font-bold text-gray-800 text-lg">Nutrisi Penting Selama Masa Kehamilan</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">Panduan asupan gizi seimbang untuk menunjang tumbuh kembang janin secara optimal dan menjaga kebugaran Bunda.</p>
+                        <a href="https://wa.me/6281261538546?text=Halo%20Bidan%20Aulia,%20saya%20ingin%20tanya%20seputar%20Edukasi%20Nutrisi" target="_blank" class="inline-block text-xs font-bold text-pinkDark hover:underline pt-2">Tanyakan Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-pinkSoft/30 rounded-3xl overflow-hidden border border-pink-100 hover:shadow-md transition-all">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80" 
+                             alt="Persiapan Melahirkan" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pinkDark/80 to-transparent flex items-end justify-center pb-4">
+                            <i class="fa-solid fa-heart-pulse text-white text-4xl drop-shadow-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs font-bold text-pinkDark uppercase tracking-wide">Persiapan Melahirkan</span>
+                        <h3 class="font-bold text-gray-800 text-lg">Kesiapan Mental & Fisik Jelang Persalinan</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">Latihan pernapasan, senam hamil sederhana, serta teknik relaksasi agar persalinan terasa lebih nyaman dan tenang.</p>
+                        <a href="https://wa.me/6281261538546?text=Halo%20Bidan%20Aulia,%20saya%20ingin%20tanya%20seputar%20Persiapan%20Persalinan" target="_blank" class="inline-block text-xs font-bold text-pinkDark hover:underline pt-2">Tanyakan Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-pinkSoft/30 rounded-3xl overflow-hidden border border-pink-100 hover:shadow-md transition-all">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519689373023-dd07c7988603?w=800&q=80" 
+                             alt="Menyusui ASI" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pinkDark/80 to-transparent flex items-end justify-center pb-4">
+                            <i class="fa-solid fa-baby text-white text-4xl drop-shadow-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs font-bold text-pinkDark uppercase tracking-wide">Masa Nifas & Menyusui</span>
+                        <h3 class="font-bold text-gray-800 text-lg">Tips Sukses ASI Eksklusif Bagi Ibu Menyusui</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">Teknik pelekatan yang benar, cara mengatasi kendala ASI, serta perawatan mandiri pasca melahirkan.</p>
+                        <a href="https://wa.me/6281261538546?text=Halo%20Bidan%20Aulia,%20saya%20ingin%20tanya%20seputar%20Konseling%20ASI" target="_blank" class="inline-block text-xs font-bold text-pinkDark hover:underline pt-2">Tanyakan Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI SECTION -->
+    <section id="testimoni" class="py-20 gradient-soft">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-pinkDark text-sm font-semibold tracking-wider uppercase">Pengalaman Bunda</span>
+                <h2 class="text-3xl font-bold text-gray-800">Apa Kata Mereka Tentang MomCare?</h2>
+                <div class="w-16 h-1 gradient-pink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-pink-100 space-y-4">
+                    <div class="flex text-accentGold text-sm space-x-1">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic">"Pendampingan dari Bidan Aulia sangat membantu. Responnya cepat kalau ditanya via WA dan penjelasannya mudah dipahami."</p>
+                    <div class="pt-4 border-t border-pink-50">
+                        <p class="font-bold text-gray-800 text-sm">Bunda Rahma</p>
+                        <p class="text-xs text-gray-400">Kota Bandung</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-pink-100 space-y-4">
+                    <div class="flex text-accentGold text-sm space-x-1">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic">"Sangat cocok untuk ibu bekerja seperti saya. Jadwal pengingat pemeriksaan dan edukasi digitalnya sangat praktis."</p>
+                    <div class="pt-4 border-t border-pink-50">
+                        <p class="font-bold text-gray-800 text-sm">Bunda Dinda</p>
+                        <p class="text-xs text-gray-400">Kota Bandung</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-pink-100 space-y-4">
+                    <div class="flex text-accentGold text-sm space-x-1">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic">"Pendampingan pasca melahirkannya oke banget. Bidan sabar banget ngajarin teknik menyusui yang benar."</p>
+                    <div class="pt-4 border-t border-pink-50">
+                        <p class="font-bold text-gray-800 text-sm">Bunda Siti</p>
+                        <p class="text-xs text-gray-400">Kota Bandung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-pinkDark text-sm font-semibold tracking-wider uppercase">Pertanyaan Umum</span>
+                <h2 class="text-3xl font-bold text-gray-800">Pertanyaan yang Sering Diajukan</h2>
+                <div class="w-16 h-1 gradient-pink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="border border-pink-200 rounded-2xl overflow-hidden">
+                    <button class="w-full p-5 text-left font-semibold text-gray-800 bg-pinkSoft/30 flex justify-between items-center focus:outline-none faq-btn">
+                        <span>Apakah pemeriksaan dapat dilakukan di rumah (Home Visit)?</span>
+                        <i class="fa-solid fa-chevron-down text-pinkDark transition-transform"></i>
+                    </button>
+                    <div class="p-5 text-sm text-gray-600 border-t border-pink-100 hidden">
+                        Ya, layanan MomCare menyediakan opsi kunjungan rumah (home visit) maupun tatap muka langsung sesuai kesepakatan dan lokasi di area Kota Bandung.
+                    </div>
+                </div>
+
+                <div class="border border-pink-200 rounded-2xl overflow-hidden">
+                    <button class="w-full p-5 text-left font-semibold text-gray-800 bg-pinkSoft/30 flex justify-between items-center focus:outline-none faq-btn">
+                        <span>Bagaimana cara melakukan reservasi jadwal pendampingan?</span>
+                        <i class="fa-solid fa-chevron-down text-pinkDark transition-transform"></i>
+                    </button>
+                    <div class="p-5 text-sm text-gray-600 border-t border-pink-100 hidden">
+                        Bunda dapat langsung menekan tombol WhatsApp di website ini (081261538546) untuk memilih paket dan menyesuaikan jadwal pemeriksaan.
+                    </div>
+                </div>
+
+                <div class="border border-pink-200 rounded-2xl overflow-hidden">
+                    <button class="w-full p-5 text-left font-semibold text-gray-800 bg-pinkSoft/30 flex justify-between items-center focus:outline-none faq-btn">
+                        <span>Apakah konseling dapat dilakukan secara online?</span>
+                        <i class="fa-solid fa-chevron-down text-pinkDark transition-transform"></i>
+                    </button>
+                    <div class="p-5 text-sm text-gray-600 border-t border-pink-100 hidden">
+                        Bisa. Selain sesi tatap muka, layanan edukasi dan tanya-jawab rutin juga difasilitasi melalui media komunikasi digital (WhatsApp).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULIR PENDAFTARAN & KONSULTASI -->
+    <section id="daftar" class="py-20 gradient-soft">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-pinkDark text-sm font-semibold tracking-wider uppercase">Mulai Perjalanan Bersama Kami</span>
+                <h2 class="text-3xl font-bold text-gray-800">Formulir Pendaftaran & Konsultasi</h2>
+                <p class="text-gray-600 text-sm">Isi formulir di bawah ini untuk mendaftar atau bertanya seputar layanan MomCare. Kami akan segera menghubungi Anda.</p>
+                <div class="w-16 h-1 gradient-pink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-pink-200">
+                <form id="contact-form" class="space-y-6">
+                    <!-- Nama Lengkap -->
+                    <div>
+                        <label for="nama" class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fa-solid fa-user text-pinkMain mr-1"></i> Nama Lengkap
+                        </label>
+                        <input type="text" id="nama" name="nama" required
+                            class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pinkMain focus:border-transparent transition-all"
+                            placeholder="Contoh: Bunda Siti Rahayu">
+                    </div>
+
+                    <!-- Nomor WhatsApp -->
+                    <div>
+                        <label for="whatsapp" class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fa-brands fa-whatsapp text-pinkMain mr-1"></i> Nomor WhatsApp
+                        </label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required
+                            class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pinkMain focus:border-transparent transition-all"
+                            placeholder="Contoh: 081234567890">
+                    </div>
+
+                    <!-- Usia Kehamilan -->
+                    <div>
+                        <label for="usia-kehamilan" class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fa-solid fa-calendar-days text-pinkMain mr-1"></i> Usia Kehamilan (Opsional)
+                        </label>
+                        <select id="usia-kehamilan" name="usia-kehamilan"
+                            class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pinkMain focus:border-transparent transition-all">
+                            <option value="">-- Pilih Usia Kehamilan --</option>
+                            <option value="trimester-1">Trimester 1 (0-12 minggu)</option>
+                            <option value="trimester-2">Trimester 2 (13-27 minggu)</option>
+                            <option value="trimester-3">Trimester 3 (28-40 minggu)</option>
+                            <option value="belum-hamil">Belum hamil / Konsultasi pra-kehamilan</option>
+                            <option value="pasca-melahirkan">Pasca melahirkan / Masa nifas</option>
+                        </select>
+                    </div>
+
+                    <!-- Paket Layanan -->
+                    <div>
+                        <label for="paket" class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fa-solid fa-box-heart text-pinkMain mr-1"></i> Paket Layanan yang Diminati
+                        </label>
+                        <select id="paket" name="paket" required
+                            class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pinkMain focus:border-transparent transition-all">
+                            <option value="">-- Pilih Paket --</option>
+                            <option value="basic">Paket Basic - Pendampingan Trimester</option>
+                            <option value="standard">Paket Standard - Continuity Care Full (Paling Populer)</option>
+                            <option value="premium">Paket Premium - Mom & Baby Exclusive</option>
+                            <option value="konsultasi">Hanya Konsultasi / Tanya-tanya</option>
+                        </select>
+                    </div>
+
+                    <!-- Pesan / Pertanyaan -->
+                    <div>
+                        <label for="pesan" class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fa-solid fa-message text-pinkMain mr-1"></i> Pesan / Pertanyaan (Opsional)
+                        </label>
+                        <textarea id="pesan" name="pesan" rows="4"
+                            class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pinkMain focus:border-transparent transition-all resize-none"
+                            placeholder="Ceritakan kebutuhan atau pertanyaan Anda..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit"
+                        class="w-full py-4 gradient-pink text-white font-bold rounded-2xl shadow-lg hover:opacity-90 transition-all text-center flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Kirim Pendaftaran via WhatsApp</span>
+                    </button>
+
+                    <p class="text-xs text-center text-gray-500 mt-4">
+                        Dengan mengirim formulir ini, Anda akan diarahkan ke WhatsApp untuk melanjutkan proses pendaftaran dengan Bidan Aulia.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-pinkDark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 pb-12 border-b border-pink-400/50">
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-white text-pinkDark flex items-center justify-center font-bold text-xl">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <span class="text-2xl font-bold">MomCare Continuity Care</span>
+                    </div>
+                    <p class="text-sm text-pink-100 max-w-sm leading-relaxed">
+                        Layanan pendampingan kehamilan berkelanjutan yang aman, nyaman, dan terpercaya. Fokus pada kesehatan ibu & janin secara holistik.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-lg text-white">Kontak Kami</h4>
+                    <ul class="space-y-2 text-sm text-pink-100">
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>081261538546</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                            <span>@auliaanrp</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-user-doctor text-lg"></i>
+                            <span>Aulia Nur Pratidina</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-lg text-white">Area Layanan</h4>
+                    <p class="text-sm text-pink-100">
+                        Kota Bandung & Sekitarnya<br>
+                        (Praktik Mandiri Bidan / Home Visit)
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-pink-200">
+                <p>&copy; 2026 MomCare Continuity Care - Aulia Nur Pratidina (P17324125037). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6281261538546?text=Halo%20Bidan%20Aulia,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20MomCare" target="_blank" class="fixed bottom-6 right-6 z-50 gradient-pink text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT FOR TOGGLE MENU & FAQ -->
+    <script>
+        // Toggle Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Toggle FAQ Accordion
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Handle Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nama = document.getElementById('nama').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const usiaKehamilan = document.getElementById('usia-kehamilan').value;
+            const paket = document.getElementById('paket').value;
+            const pesan = document.getElementById('pesan').value;
+
+            // Format pesan untuk WhatsApp
+            let message = `Halo Bidan Aulia, saya ingin mendaftar layanan MomCare.\n\n`;
+            message += `Nama: ${nama}\n`;
+            message += `No. WhatsApp: ${whatsapp}\n`;
+            
+            if (usiaKehamilan) {
+                const usiaText = {
+                    'trimester-1': 'Trimester 1 (0-12 minggu)',
+                    'trimester-2': 'Trimester 2 (13-27 minggu)',
+                    'trimester-3': 'Trimester 3 (28-40 minggu)',
+                    'belum-hamil': 'Belum hamil / Konsultasi pra-kehamilan',
+                    'pasca-melahirkan': 'Pasca melahirkan / Masa nifas'
+                };
+                message += `Usia Kehamilan: ${usiaText[usiaKehamilan]}\n`;
+            }
+            
+            if (paket) {
+                const paketText = {
+                    'basic': 'Paket Basic - Pendampingan Trimester',
+                    'standard': 'Paket Standard - Continuity Care Full',
+                    'premium': 'Paket Premium - Mom & Baby Exclusive',
+                    'konsultasi': 'Hanya Konsultasi / Tanya-tanya'
+                };
+                message += `Paket yang Diminati: ${paketText[paket]}\n`;
+            }
+            
+            if (pesan) {
+                message += `\nPesan:\n${pesan}`;
+            }
+
+            // Redirect ke WhatsApp
+            const waURL = `https://wa.me/6281261538546?text=${encodeURIComponent(message)}`;
+            window.open(waURL, '_blank');
+        });
+    </script>
+</body>
+</html>
